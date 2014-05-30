@@ -1,4 +1,4 @@
-/*globals Markdown, CodeMirror */
+/*globals marked, CodeMirror */
 
 (function() {
    "use strict"; 
@@ -40,7 +40,17 @@
 
       code = $('#code');
       preview = $('#preview');
-      convert = new Markdown.getSanitizingConverter().makeHtml;
+
+      convert = marked.setOptions({
+        renderer: new marked.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: true,
+        smartLists: true,
+        smartypants: false
+      });
 
       storedCode();
 

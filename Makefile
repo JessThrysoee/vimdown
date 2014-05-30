@@ -1,13 +1,13 @@
-clone: pagedown codemirror
+clone: marked codemirror
 
-pagedown: 
-	hg clone https://code.google.com/p/pagedown/
+marked:
+	git clone https://github.com/chjj/marked
 
 codemirror:
 	git clone https://github.com/marijnh/codemirror
 	
 pull: clone
-	(cd pagedown; hg pull)
+	(cd marked; git pull)
 	(cd codemirror; git pull)
 
 package: pull
@@ -22,12 +22,11 @@ package: pull
 			codemirror/addon/edit/continuelist.js\
 			codemirror/addon/search/searchcursor.js\
 			codemirror/keymap/vim.js\
-			pagedown/Markdown.Converter.js\
-			pagedown/Markdown.Sanitizer.js\
+			marked/marked.min.js\
 			.htaccess
 
 
 clean:
 	rm -f vimdown.tar.gz 
-	rm -rf pagedown
+	rm -rf marked
 	rm -rf codemirror
