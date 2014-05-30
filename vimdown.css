@@ -1,0 +1,59 @@
+*, *:after, *:before {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+html, body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+}
+
+.CodeMirror {
+   vertical-align: top;
+   display: inline-block;
+   width: 50%;
+   height: 100%;
+}
+
+#preview-wrapper {
+   position: relative;
+   width: 50%;
+   height: 100%;
+   display: inline-block;
+}
+
+#preview {
+   vertical-align: top;
+   width: 100%;
+   height: 100%;
+   overflow: scroll;
+   padding: 0 7px;
+}
+
+#preview h1,h2,h3 {
+   /*
+   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
+   */
+}
+
+body.resizer, body.resizer * {
+   cursor: col-resize !important;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   user-select: none
+}
+
+#resizer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 7px;
+   height: 100%;
+   border-left: 1px solid #DDD;
+   cursor: col-resize;
+}
+
