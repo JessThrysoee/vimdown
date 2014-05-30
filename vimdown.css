@@ -7,8 +7,26 @@
 html, body {
    margin: 0;
    padding: 0;
-   height: 100%;
    width: 100%;
+   height: 100%;
+}
+
+body.resizer, body.resizer * {
+   cursor: col-resize !important;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   user-select: none
+}
+
+#resizer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 7px;
+   height: 100%;
+   border-left: 1px solid #DDD;
+   cursor: col-resize;
 }
 
 .CodeMirror {
@@ -33,27 +51,62 @@ html, body {
    padding: 0 7px;
 }
 
-#preview h1,h2,h3 {
-   /*
-   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
-   */
+#preview {
+   color: #333;
+   font-family: Arial,sans-serif;
+   font-size: 14px;
+   line-height: 1.42857142857143;
 }
 
-body.resizer, body.resizer * {
-   cursor: col-resize !important;
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   user-select: none
+#preview h1 {
+   font-size: 24px;
+   font-weight: normal;
+   line-height: 1.25;
 }
 
-#resizer {
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   width: 7px;
-   height: 100%;
-   border-left: 1px solid #DDD;
-   cursor: col-resize;
+#preview h2 {
+   font-size: 20px;
+   font-weight: normal;
+   line-height: 1.5;
+}
+
+#preview h3 {
+   font-size: 16px;
+   line-height: 1.5;
+}
+
+#preview h4 {
+   font-size: 14px;
+   line-height: 1.42857142857143;
+}
+
+#preview h5 {
+   color: #707070;
+   font-size: 12px;
+   line-height: 1.66666666666667;
+   margin: 20px 0 0 0;
+   text-transform: uppercase;
+}
+
+#preview h6 {
+   color: #707070;
+   font-size: 12px;
+   line-height: 1.66666666666667;
+}
+
+#preview code,kbd {
+   font-family: monospace;
+}
+
+#preview blockquote {
+   border-left: 1px solid #ccc;
+   color: #707070;
+   margin-left: 19px;
+   padding: 10px 20px;
+}
+
+#preview blockquote>cite {
+   display: block;
+   margin-top: 10px;
 }
 
