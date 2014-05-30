@@ -19,7 +19,11 @@
          var code, html;
 
          code = editor.getValue();
-         localStorage.setItem('code', code);
+         if (code && code.trim() !== "") {
+            localStorage.setItem('code', code);
+         } else {
+            localStorage.removeItem('code');
+         }
 
          html = convert(code);
          preview.innerHTML = html;
