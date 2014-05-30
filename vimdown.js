@@ -1,14 +1,14 @@
 /*globals marked, CodeMirror */
 
 (function() {
-   "use strict"; 
+   "use strict";
 
    main();
 
    function main() {
       var editor, convert, preview, code;
 
-      function storedCode() {
+      function restoreSavedMarkdown() {
          var item = localStorage.getItem('code');
          if (item) {
             code.innerHTML = item;
@@ -42,17 +42,10 @@
       preview = $('#preview');
 
       convert = marked.setOptions({
-        renderer: new marked.Renderer(),
-        gfm: true,
-        tables: true,
-        breaks: false,
-        pedantic: false,
-        sanitize: true,
-        smartLists: true,
-        smartypants: false
+         renderer: new marked.Renderer()
       });
 
-      storedCode();
+      restoreSavedMarkdown();
 
       editor = getEditor(code);
       editor.on('change', previewUpdate);
@@ -66,7 +59,7 @@
 
    function getEditor(div) {
       return CodeMirror.fromTextArea(div, {
-         mode: 'markdown',
+         mode: 'gfm',
          vimMode: true,
          lineNumbers: true,
          viewportMargin: Infinity,
