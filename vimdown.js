@@ -6,7 +6,7 @@
    main();
 
    function main() {
-      var editor, convert, preview, code;
+      var editor, preview, code;
 
       function restoreSavedMarkdown() {
          var item = localStorage.getItem('code');
@@ -25,7 +25,7 @@
             localStorage.removeItem('code');
          }
 
-         html = convert(code);
+         html = marked(code);
          preview.innerHTML = html;
       }
 
@@ -44,10 +44,6 @@
 
       code = $('#code');
       preview = $('#preview');
-
-      convert = marked.setOptions({
-         renderer: new marked.Renderer()
-      });
 
       restoreSavedMarkdown();
 
