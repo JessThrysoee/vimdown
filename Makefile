@@ -12,22 +12,9 @@ pull: clone
 
 package: pull
 	mkdir vimdown
-	@rsync -R\
-			vimdown.html\
-			vimdown.js\
-			vimdown.css\
-			gfm.css\
-			codemirror/lib/codemirror.css\
-			codemirror/lib/codemirror.js\
-			codemirror/mode/markdown/markdown.js\
-			codemirror/mode/gfm/gfm.js\
-			codemirror/mode/xml/xml.js\
-			codemirror/addon/edit/continuelist.js\
-			codemirror/addon/search/searchcursor.js\
-			codemirror/addon/mode/overlay.js\
-			codemirror/keymap/vim.js\
-			marked/marked.min.js\
+	rsync -R `sed -n -E -e '1,$$s/.*<script src="([^"]*)".*/\1/p' -e '1,$$s/.*<link.*href="([^"]*)".*/\1/p' vimdown.html`\
 			.htaccess\
+			vimdown.html\
 			vimdown
 	@tar zcvf vimdown.tar.gz vimdown
 	rm -rf vimdown
