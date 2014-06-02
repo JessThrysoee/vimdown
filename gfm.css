@@ -14,7 +14,6 @@ body,input,select,textarea,button {
 }
 
 body {
-   min-width: 1020px;
    color: #333333;
    background-color: #fff
 }
