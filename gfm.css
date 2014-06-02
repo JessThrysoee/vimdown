@@ -60,7 +60,7 @@ blockquote {
 .markdown-body {
    font-size: 15px;
    line-height: 1.7;
-   overflow: hidden;
+   overflow: scroll;
    word-wrap: break-word
 }
 
