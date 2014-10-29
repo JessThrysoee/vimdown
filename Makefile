@@ -5,7 +5,7 @@ marked:
 
 codemirror:
 	git clone https://github.com/marijnh/codemirror
-	
+
 pull: clone
 	(cd marked; git pull)
 	(cd codemirror; git pull)
@@ -21,7 +21,7 @@ package: pull
 
 
 clean:
-	rm -f vimdown.tar.gz 
+	rm -f vimdown.tar.gz
 	rm -rf vimdown
 
 dist-clean: clean
