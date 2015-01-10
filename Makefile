@@ -1,10 +1,13 @@
-clone: marked codemirror
+clone: marked codemirror github-markdown-css
 
 marked:
 	git clone https://github.com/chjj/marked
 
 codemirror:
 	git clone https://github.com/marijnh/codemirror
+
+github-markdown-css:
+	curl -O https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css
 
 pull: clone
 	(cd marked; git pull)
@@ -17,7 +20,7 @@ package: pull
 			vimdown.html\
 			vimdown
 	@tar zcvf vimdown.tar.gz vimdown
-	rm -rf vimdown
+	#rm -rf vimdown
 
 
 clean:
