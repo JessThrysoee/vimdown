@@ -9,6 +9,7 @@ html, body {
    padding: 0;
    width: 100%;
    height: 100%;
+   overflow: hidden;
 }
 
 body.resizer, body.resizer * {
@@ -47,4 +48,5 @@ body.resizer, body.resizer * {
    width: 100%;
    height: 100%;
    padding: 16px;
+   overflow: auto;
 }
