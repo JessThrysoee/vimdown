@@ -1,0 +1,6 @@
+# vimdown; a vim markdown editor.
+
+A quick client-side only mashup of [marked](https://github.com/chjj/marked)
+and [codemirror](http://codemirror.net/demo/vim.html) with vim bindings.
+
+The vimdown source code is available on [github](https://github.com/JessThrysoee/vimdown).
